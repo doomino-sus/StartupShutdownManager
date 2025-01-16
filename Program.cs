@@ -517,12 +517,12 @@ namespace StartupShutdownManager
                     case ExecutionMoment.BeforeShutdown:
                         var shutdownTrigger = new EventTrigger();
                         shutdownTrigger.Subscription = @"<QueryList>
-                        <Query Id='0'>
-                            <Select Path='System'>
-                                *[System[Provider[@Name='User32'] and (EventID=1074)]]
-                            </Select>
-                        </Query>
-                    </QueryList>";
+                    <Query Id='0'>
+                        <Select Path='System'>
+                            *[System[Provider[@Name='User32'] and (EventID=1074)]]
+                        </Select>
+                    </Query>
+                </QueryList>";
                         td.Triggers.Add(shutdownTrigger);
                         break;
                     case ExecutionMoment.BeforeLogoff:
@@ -563,32 +563,69 @@ namespace StartupShutdownManager
 
                 string taskName = $"Script_{script.Name}_{script.ExecutionMoment}";
 
-                if (script.RunAsAdminWithUserCredentials)
+                // Ustawienia rejestracji zadania zależne od momentu wykonania
+                switch (script.ExecutionMoment)
                 {
-                    td.Principal.RunLevel = TaskRunLevel.Highest;
-                    ts.RootFolder.RegisterTaskDefinition(
-                        taskName,
-                        td,
-                        TaskCreation.CreateOrUpdate,
-                        WindowsIdentity.GetCurrent().Name,
-                        null,
-                        TaskLogonType.InteractiveToken
-                    );
-                }
-                else
-                {
-                    ts.RootFolder.RegisterTaskDefinition(
-                        taskName,
-                        td,
-                        TaskCreation.CreateOrUpdate,
-                        WindowsIdentity.GetCurrent().Name,  // Używamy konta aktualnego użytkownika
-                        null,
-                        TaskLogonType.InteractiveToken     // Zmieniamy typ logowania
-                    );
-                }
+                    case ExecutionMoment.SystemStartup:
+                        if (script.RunAsAdminWithUserCredentials)
+                        {
+                            td.Principal.RunLevel = TaskRunLevel.Highest;
+                            ts.RootFolder.RegisterTaskDefinition(
+                                taskName,
+                                td,
+                                TaskCreation.CreateOrUpdate,
+                                WindowsIdentity.GetCurrent().Name,
+                                null,
+                                TaskLogonType.InteractiveToken
+                            );
+                        }
+                        else
+                        {
+                            ts.RootFolder.RegisterTaskDefinition(
+                                taskName,
+                                td,
+                                TaskCreation.CreateOrUpdate,
+                                "SYSTEM",
+                                null,
+                                TaskLogonType.ServiceAccount
+                            );
+                        }
+                        break;
 
+                    case ExecutionMoment.BeforeShutdown:
+                        if (script.RunAsAdminWithUserCredentials)
+                        {
+                            td.Principal.RunLevel = TaskRunLevel.Highest;
+                        }
+                        ts.RootFolder.RegisterTaskDefinition(
+                            taskName,
+                            td,
+                            TaskCreation.CreateOrUpdate,
+                            "SYSTEM",
+                            null,
+                            TaskLogonType.ServiceAccount
+                        );
+                        break;
+
+                    case ExecutionMoment.UserLogon:
+                    case ExecutionMoment.BeforeLogoff: // Dodane BeforeLogoff do tej samej sekcji co UserLogon
+                        if (script.RunAsAdminWithUserCredentials)
+                        {
+                            td.Principal.RunLevel = TaskRunLevel.Highest;
+                        }
+                        ts.RootFolder.RegisterTaskDefinition(
+                            taskName,
+                            td,
+                            TaskCreation.CreateOrUpdate,
+                            WindowsIdentity.GetCurrent().Name,
+                            null,
+                            TaskLogonType.InteractiveToken
+                        );
+                        break;
+                }
             }
         }
+
         private void ToggleScriptEnabled(object sender, EventArgs e)
         {
             ListView listView = (ListView)Controls.Find("scriptListView", true)[0];
