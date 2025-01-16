@@ -1,4 +1,4 @@
-# Menedżers skryptów podczas rozruchu i zamykania systemu Windows
+# Menedżers skryptów
 
 Aplikacja do zarządzania skryptami uruchamianymi podczas startu i zamykania systemu Windows.
 
