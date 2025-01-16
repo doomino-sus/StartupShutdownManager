@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
@@ -581,11 +581,12 @@ namespace StartupShutdownManager
                         taskName,
                         td,
                         TaskCreation.CreateOrUpdate,
-                        "SYSTEM",
+                        WindowsIdentity.GetCurrent().Name,  // Używamy konta aktualnego użytkownika
                         null,
-                        TaskLogonType.ServiceAccount
+                        TaskLogonType.InteractiveToken     // Zmieniamy typ logowania
                     );
                 }
+
             }
         }
         private void ToggleScriptEnabled(object sender, EventArgs e)
