@@ -59,8 +59,7 @@ StartupShutdownManager/
 │   ├── App.config
 │   ├── packages.config
 │   └── Properties/
-├── Zrzuty/
-│   └── [zrzuty ekranu aplikacji]
+
 
 ```
 
@@ -71,5 +70,4 @@ StartupShutdownManager/
   - `Program.cs` - Punkt wejścia aplikacji
   - `App.config` - Plik konfiguracyjny aplikacji
   - `packages.config` - Konfiguracja pakietów NuGet
-- `Zrzuty/` - Katalog zawierający zrzuty ekranu aplikacji
 
