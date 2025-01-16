@@ -46,6 +46,9 @@ Aplikacja umożliwia zarządzanie skryptami, które są wykonywane podczas róż
 ## Zrzuty ekranu
 [Tutaj dodaj zrzuty ekranu aplikacji]
 
+## Struktura projektu
+
+```
 StartupShutdownManager/
 ├── .gitignore
 ├── README.md
@@ -58,6 +61,15 @@ StartupShutdownManager/
 │   └── Properties/
 ├── Zrzuty/
 │   └── [zrzuty ekranu aplikacji]
-└── dokumentacja/
-    └── [dodatkowa dokumentacja]
+
+```
+
+## Opis struktury
+
+- `StartupShutdownManager.sln` - Główny plik rozwiązania Visual Studio
+- `StartupShutdownManager/` - Główny katalog projektu
+  - `Program.cs` - Punkt wejścia aplikacji
+  - `App.config` - Plik konfiguracyjny aplikacji
+  - `packages.config` - Konfiguracja pakietów NuGet
+- `Zrzuty/` - Katalog zawierający zrzuty ekranu aplikacji
 
