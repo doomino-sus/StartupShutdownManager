@@ -58,6 +58,7 @@ StartupShutdownManager/
 │   ├── Program.cs
 │   ├── App.config
 │   ├── packages.config
+│   ├── mojaikona.ico
 │   └── Properties/
 
 
@@ -70,4 +71,5 @@ StartupShutdownManager/
   - `Program.cs` - Punkt wejścia aplikacji
   - `App.config` - Plik konfiguracyjny aplikacji
   - `packages.config` - Konfiguracja pakietów NuGet
+  - `mojaikona.ico` - Ikona aplikacji
 
