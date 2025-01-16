@@ -1,6 +1,6 @@
-# Menedżers skryptów
+# Menedżer skryptów
 
-Aplikacja do zarządzania skryptami uruchamianymi podczas startu i zamykania systemu Windows.
+Aplikacja do zarządzania skryptami uruchamianymi podczas rozruchu i zamykania systemu Windows.
 
 ## Opis
 Aplikacja umożliwia zarządzanie skryptami, które są wykonywane podczas różnych zdarzeń systemowych:
