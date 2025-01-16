@@ -41,7 +41,7 @@ Aplikacja umożliwia zarządzanie skryptami, które są wykonywane podczas róż
 5. Testuj skrypty używając przycisku "Testuj"
 
 ## Zrzuty ekranu
-[Tutaj dodaj zrzuty ekranu aplikacji]
+[screen.png]
 
 ## Struktura projektu
 
