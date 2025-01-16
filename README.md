@@ -86,8 +86,7 @@ Skrypt uruchamia się zaraz po starcie systemu Windows:
 Skrypt uruchamia się po pomyślnym zalogowaniu użytkownika:
 - Wykonywany dla każdego użytkownika, który się loguje.
 - Uruchamia się w kontekście zalogowanego użytkownika.
-
-## Przykładowe zastosowania:
+#### Przykładowe zastosowania:
 - Mapowanie dysków sieciowych
 - Konfiguracja środowiska użytkownika
 - Uruchamianie aplikacji użytkownika
@@ -97,8 +96,7 @@ Skrypt uruchamia się po pomyślnym zalogowaniu użytkownika:
 Skrypt uruchamia się, gdy system otrzyma polecenie wyłączenia:
 - Wykonywany przed rozpoczęciem procesu wyłączania systemu.
 - Uruchamia się zanim system zacznie zamykać usługi i aplikacje.
-
-## Przykładowe zastosowania:
+#### Przykładowe zastosowania:
 - Backup danych
 - Zamykanie aplikacji w kontrolowany sposób
 - Zapisywanie stanu systemu
@@ -108,7 +106,7 @@ Skrypt uruchamia się, gdy system otrzyma polecenie wyłączenia:
 Skrypt uruchamia się, gdy użytkownik inicjuje wylogowanie:
 - Wykonywany przed zamknięciem sesji użytkownika.
 - Uruchamia się, kiedy użytkownik jest jeszcze zalogowany.
-## Przykładowe zastosowania:
+#### Przykładowe zastosowania:
 - Zapisywanie ustawień aplikacji
 - Synchronizacja danych użytkownika
 - Zamykanie aplikacji użytkownika
