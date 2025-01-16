@@ -1,7 +1,4 @@
-# StartupShutdownManager
-Aplikacja do zarządzania skryptami podczas startu i wyłączenia systemu Windows
-
-# Menedżer Skryptów Startowych i Wyłączeniowych
+# Menedżers skryptów podczas rozruchu i zamykania systemu Windows
 
 Aplikacja do zarządzania skryptami uruchamianymi podczas startu i zamykania systemu Windows.
 
