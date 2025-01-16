@@ -75,9 +75,8 @@ StartupShutdownManager/
 ## 1. Przy starcie systemu (SystemStartup)
 Skrypt uruchamia się zaraz po starcie systemu Windows:
 - Wykonywany przed zalogowaniem jakiegokolwiek użytkownika.
-- Uruchamia się z uprawnieniami SYSTEM.  
-
-  Przykładowe zastosowania:
+- Uruchamia się z uprawnieniami SYSTEM.
+#### Przykładowe zastosowania:
 - Inicjalizacja sprzętu
 - Konfiguracja sieci
 - Montowanie dysków
