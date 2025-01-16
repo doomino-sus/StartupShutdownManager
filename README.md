@@ -40,8 +40,8 @@ Aplikacja umożliwia zarządzanie skryptami, które są wykonywane podczas róż
 4. Używaj menu kontekstowego lub przycisków do zarządzania skryptami
 5. Testuj skrypty używając przycisku "Testuj"
 
-## Zrzuty ekranu
-[screen.png]
+## Zrzut ekranu
+![Zrzut ekranu](screen.png)
 
 ## Struktura projektu
 
