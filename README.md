@@ -46,4 +46,18 @@ Aplikacja umożliwia zarządzanie skryptami, które są wykonywane podczas róż
 ## Zrzuty ekranu
 [Tutaj dodaj zrzuty ekranu aplikacji]
 
+StartupShutdownManager/
+├── .gitignore
+├── README.md
+├── LICENSE
+├── StartupShutdownManager.sln
+├── StartupShutdownManager/
+│   ├── Program.cs
+│   ├── App.config
+│   ├── packages.config
+│   └── Properties/
+├── Zrzuty/
+│   └── [zrzuty ekranu aplikacji]
+└── dokumentacja/
+    └── [dodatkowa dokumentacja]
 
